@@ -23,3 +23,7 @@ Route::get('/register', [UserController::class, 'create']);
    
 // Show Login Form
 Route::get('/login', [UserController::class, 'login'])->name('login');
+
+// Create New User
+Route::post('/users', [UserController::class, 'store']);
+
