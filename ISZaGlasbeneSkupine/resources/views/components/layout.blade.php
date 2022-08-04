@@ -29,27 +29,33 @@
   <nav class="flex justify-between items-center mb-4">
     <a href="/"><img class="w-24" src="{{asset('slike/logo.jpg')}}" alt="" class="logo" /></a>
     <ul class="flex space-x-6 mr-6 text-lg">
+      @auth
       <li>
         <span class="font-bold uppercase">
-          Dobrodošel Ime in priimek
+          Dobrodošel {{auth()->user()->name}}
         </span>
       </li>
+      
+
       <li>
         <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i> Urejaj Skupine</a>
       </li>
       <li>
         <form class="inline" method="POST" action="/logout">
+          @csrf
           <button type="submit">
             <i class="fa-solid fa-door-closed"></i> Odjava
           </button>
         </form>
       </li>
+      @else
       <li>
         <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> Registracija</a>
       </li>
       <li>
         <a href="/login" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i> Prijava</a>
       </li>
+      @endauth
     </ul>
   </nav>
 
