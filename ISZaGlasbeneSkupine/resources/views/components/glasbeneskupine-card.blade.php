@@ -6,12 +6,12 @@
       src="{{$skupina->slika?asset('storage/' . $skupina->slika) : asset('/slike/logo.jpg')}}" alt="" />
     <div>
       <h3 class="text-2xl">
-        <a href="/skupine/{{$skupina->id}}">{{$skupina->ime}}</a>
+        <a href="/glasbeneskupine/{{$skupina->id}}">{{$skupina->ime}}</a>
       </h3>
       <div class="text-xl font-bold mb-4">{{$skupina->zanr}}</div>
-      <x-listing-tags :tagsCsv="$listing->tags" />
+      <x-skupina-oznake :tagsCsv="$skupina->oznake" />
       <div class="text-lg mt-4">
-        <i class="fa-solid fa-location-dot"></i> {{$listing->lokacija}}
+        <i class="fa-solid fa-location-dot"></i> {{$skupina->lokacija}}
       </div>
     </div>
   </div>

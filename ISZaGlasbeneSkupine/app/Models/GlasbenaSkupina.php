@@ -9,17 +9,17 @@ class GlasbenaSkupina extends Model
 {
     use HasFactory;
 
-    // protected $fillable = ['title', 'company', 'location', 'website', 'email', 'description', 'tags'];
+    protected $fillable = ['imeskupine', 'zanr', 'lokacija', 'opis', 'oznake'];
 
     public function scopeFilter($query, array $filters) {
-        if($filters['tag'] ?? false) {
-            $query->where('tags', 'like', '%' . request('tag') . '%');
+        if($filters['oznake'] ?? false) {
+            $query->where('oznake', 'like', '%' . request('oznake') . '%');
         }
 
         if($filters['search'] ?? false) {
             $query->where('imeskupine', 'like', '%' . request('search') . '%')
                 ->orWhere('opis', 'like', '%' . request('search') . '%')
-                ->orWhere('tags', 'like', '%' . request('search') . '%');
+                ->orWhere('oznake', 'like', '%' . request('search') . '%');
         }
     }
 
