@@ -19,9 +19,18 @@ Route::get('/', function () {
     return view('index');
 });
 
-// Show Create Form
-Route::get('/skupine/ustanovi', [GlasbenaSkupinaController::class, 'create'])->middleware('auth');
 
+//---GLASBENE SKUPINE
+// Show Create Form
+Route::get('/glasbeneskupine/ustanovi', [GlasbenaSkupinaController::class, 'create'])->middleware('auth');
+
+// Store music group and data
+Route::post('/glasbeneskupine', [ListingController::class, 'store'])->middleware('auth');
+
+
+
+
+//UPORABNIKI IN REGISTRACIJA
 // Show Register/Create Form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 

@@ -10,6 +10,6 @@ class GlasbenaSkupinaController extends Controller
 
     // Show Create Form
     public function create() {
-        return view('skupine.ustanovi');
+        return view('glasbeneskupine.ustanovi');
     }
 }

@@ -8,31 +8,31 @@
       <form method="POST" action="/Gskupine" enctype="multipart/form-data">
         @csrf
         <div class="mb-6">
-          <label for="Glasbena Skupina" class="inline-block text-lg mb-2">Ime skupine</label>
-          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="Glasbena Skupina"
-            value="{{old('Glasbena Skupina')}}" />
+          <label for="imeskupine" class="inline-block text-lg mb-2">Ime skupine</label>
+          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="imeskupine"
+            value="{{old('imeskupine')}}" />
   
-          @error('Glasbena Skupina')
+          @error('imeskupine')
           <p class="text-red-500 text-xs mt-1"> </p>
           @enderror
         </div>
   
         <div class="mb-6">
-          <label for="žanr" class="inline-block text-lg mb-2">Žanr</label>
-          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="žanr"
-            placeholder="Primer: Rock, Pop, Blues ipd." value="{{old('žanr')}}" />
+          <label for="zanr" class="inline-block text-lg mb-2">Žanr</label>
+          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="zanr"
+            placeholder="Primer: Rock, Pop, Blues ipd." value="{{old('zanr')}}" />
   
-          @error('žanr')
+          @error('zanr')
           <p class="text-red-500 text-xs mt-1"> </p>
           @enderror
         </div>
   
         <div class="mb-6">
-          <label for="Lokacija" class="inline-block text-lg mb-2">Lokacija</label>
-          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="Lokacija"
-            placeholder="Primer: Slovenija, Ljubljana" value="{{old('Lokacija')}}" />
+          <label for="lokacija" class="inline-block text-lg mb-2">Lokacija</label>
+          <input type="text" class="border border-gray-200 rounded p-2 w-full" name="lokacija"
+            placeholder="Primer: Slovenija, Ljubljana" value="{{old('lokacija')}}" />
   
-          @error('Lokacija')
+          @error('lokacija')
           <p class="text-red-500 text-xs mt-1"> </p>
           @enderror
         </div>
