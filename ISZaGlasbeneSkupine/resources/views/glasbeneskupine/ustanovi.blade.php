@@ -5,7 +5,7 @@
         <p class="mb-4">Ustanovi skupino, da pridobiš nove člane</p>
       </header>
   
-      <form method="POST" action="/Gskupine" enctype="multipart/form-data">
+      <form method="POST" action="/glasbeneskupine" enctype="multipart/form-data">
         @csrf
         <div class="mb-6">
           <label for="imeskupine" class="inline-block text-lg mb-2">Ime skupine</label>

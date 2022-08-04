@@ -32,7 +32,7 @@ class GlasbenaSkupinaController extends Controller
     // Store music group data
     public function store(Request $request) {
         $formFields = $request->validate([
-            'imeskupine' => ['required', Rule::unique('glasbeneskupine', 'company')],
+            'imeskupine' => ['required', Rule::unique('glasbeneskupine', 'imeskupine')],
             'zanr' => ['required'],
             'lokacija' => 'required',
             'oznake' => 'required',

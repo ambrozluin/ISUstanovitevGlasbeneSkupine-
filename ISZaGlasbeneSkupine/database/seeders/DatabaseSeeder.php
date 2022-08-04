@@ -29,6 +29,13 @@ class DatabaseSeeder extends Seeder
             'email' => 'Janez@gmail.com'
         ]);
 
-
+        GlasbenaSkupina::create([
+             'imeskupine' => 'Laravel Senior Developer', 
+             'zanr' => 'laravel, javascript',
+             'company' => 'Acme Corp',
+             'lokacija' => 'Boston, MA',
+             'oznake' => 'email1@email.com',
+             'opis' => 'asdfafsdafsafsdfafsafm'
+         ]);
     }
 }

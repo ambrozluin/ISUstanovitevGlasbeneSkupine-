@@ -25,7 +25,7 @@ Route::get('/', function () {
 Route::get('/glasbeneskupine/ustanovi', [GlasbenaSkupinaController::class, 'create'])->middleware('auth');
 
 // Store music group and data
-Route::post('/glasbeneskupine', [ListingController::class, 'store'])->middleware('auth');
+Route::post('/glasbeneskupine', [GlasbenaSkupinaController::class, 'store'])->middleware('auth');
 
 
 
