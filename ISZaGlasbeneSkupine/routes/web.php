@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GlasbenaSkupinaController;
+use App\Models\Glasbenaskupina;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ Route::get('/', function () {
 
 //---GLASBENE SKUPINE
 // Show Create Form
-Route::get('/glasbeneskupine/ustanovi', [GlasbenaSkupinaController::class, 'create'])->middleware('auth');
+Route::get('/glasbeneskupine/create', [GlasbenaSkupinaController::class, 'create'])->middleware('auth');
 
 // Store music group and data
 Route::post('/glasbeneskupine', [GlasbenaSkupinaController::class, 'store'])->middleware('auth');
@@ -45,3 +46,11 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 
 // Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+// All Listings
+//Route::get('/', [Glasbenaskupina::class, 'index']);
+
+
+
+// Single Listing
+//Route::get('/glasbeneskupine/{glasbenaskupina}', [Glasbenaskupina::class, 'show']);
