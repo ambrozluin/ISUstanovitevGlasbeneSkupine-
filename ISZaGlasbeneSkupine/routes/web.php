@@ -23,7 +23,6 @@ Route::get('/', function () {
 
 
 //---GLASBENE SKUPINE
-// Show Create Form
 
 // All Listings
 Route::get('/', [ListingController::class, 'index']);

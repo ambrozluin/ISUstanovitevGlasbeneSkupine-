@@ -7,7 +7,7 @@
         Glasbene<span class="text-black">Skupine</span>
       </h1>
       <p class="text-2xl text-gray-200 font-bold my-4">
-        Poišči ali ustanovi novo glasbeni skupino
+        Poišči glasbeno skupino ali ustanovi novo
       </p>
       <div>
 
