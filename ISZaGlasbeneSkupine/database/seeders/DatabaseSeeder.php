@@ -2,9 +2,7 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\GlasbenaSkupina;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -29,13 +27,5 @@ class DatabaseSeeder extends Seeder
             'email' => 'Janez@gmail.com'
         ]);
 
-        GlasbenaSkupina::create([
-             'imeskupine' => 'Laravel Senior Developer', 
-             'zanr' => 'laravel, javascript',
-             'company' => 'Acme Corp',
-             'lokacija' => 'Boston, MA',
-             'oznake' => 'email1@email.com',
-             'opis' => 'asdfafsdafsafsdfafsafm'
-         ]);
     }
 }
