@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Glasbenaskupina;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ListingController;
@@ -52,6 +52,7 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 
 //UPORABNIKI IN REGISTRACIJA
+
 // Show Register/Create Form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
