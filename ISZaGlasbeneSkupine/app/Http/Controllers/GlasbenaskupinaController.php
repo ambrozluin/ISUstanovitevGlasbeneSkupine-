@@ -2,29 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Listing;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
+use App\Models\Glasbenaskupina;
 
-class ListingController extends Controller
+class GlasbenaskupinaController extends Controller
 {
     // Show all listings
     public function index() {
-        return view('listings.index', [
-            'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(6)
+        return view('glasbeneskupine.index', [
+            'glasbeneskupine' => Glasbenaskupina::latest()->filter(request(['tag', 'search']))->paginate(6)
         ]);
     }
 
     //Show single listing
-    public function show(Listing $listing) {
-        return view('listings.show', [
-            'listing' => $listing
+    public function show(Glasbenaskupina $glasbenaskupina) {
+        return view('glasbeneskupine.show', [
+            'glasbeneskupine' => $glasbenaskupina
         ]);
     }
 
     // Show Create Form
     public function create() {
-        return view('listings.create');
+        return view('glasbeneskupine.create');
     }
 
     // Store Listing Data
@@ -43,20 +42,20 @@ class ListingController extends Controller
 
         $formFields['user_id'] = auth()->id();
 
-        Listing::create($formFields);
+        Glasbenaskupina::create($formFields);
 
-        return redirect('/')->with('message', 'Listing created successfully!');
+        return redirect('/')->with('message', 'Music group created successfully!');
     }
 
     // Show Edit Form
-    public function edit(Listing $listing) {
-        return view('listings.edit', ['listing' => $listing]);
+    public function edit(Glasbenaskupina $glasbenaskupina) {
+        return view('glasbeneskupine.edit', ['glasbenaskupina' => $glasbenaskupina]);
     }
 
     // Update Listing Data
-    public function update(Request $request, Listing $listing) {
+    public function update(Request $request, Glasbenaskupina $glasbenaskupina) {
         // Make sure logged in user is owner
-        if($listing->user_id != auth()->id()) {
+        if($glasbenaskupina->user_id != auth()->id()) {
             abort(403, 'Unauthorized Action');
         }
         
@@ -72,20 +71,20 @@ class ListingController extends Controller
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
-        $listing->update($formFields);
+        $glasbenaskupina->update($formFields);
 
         return back()->with('message', 'Listing updated successfully!');
     }
 
     // Delete Listing
-    public function destroy(Listing $listing) {
+    public function destroy(Glasbenaskupina $glasbenaskupina) {
         // Make sure logged in user is owner
-        if($listing->user_id != auth()->id()) {
+        if($glasbenaskupina->user_id != auth()->id()) {
             abort(403, 'Unauthorized Action');
         }
         
-        $listing->delete();
+        $glasbenaskupina->delete();
         return redirect('/')->with('message', 'Listing deleted successfully');
     }
-
+    
 }

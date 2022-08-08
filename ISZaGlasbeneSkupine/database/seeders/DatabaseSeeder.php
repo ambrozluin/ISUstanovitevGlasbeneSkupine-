@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-
+use App\Models\Glasbenaskupina;
 use App\Models\User;
 use App\Models\Listing;
 use Illuminate\Database\Seeder;
@@ -24,6 +24,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Listing::factory(12)->create([
+            'user_id' => $user->id
+        ]);
+
+        Glasbenaskupina::factory(12)->create([
             'user_id' => $user->id
         ]);
     }
