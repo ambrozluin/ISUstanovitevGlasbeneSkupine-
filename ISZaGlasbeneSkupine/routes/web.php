@@ -1,10 +1,10 @@
 <?php
 
-
+use App\Http\Controllers\GlasbenaskupinaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ListingController;
-
+use App\Models\Glasbenaskupina;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +50,29 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 
 
+// All Listings
+Route::get('/', [GlasbenaskupinaController::class, 'index']);
+
+// Show Create Form
+Route::get('/glasbeneskupine/create', [GlasbenaskupinaController::class, 'create'])->middleware('auth');
+
+// Store Listing Data
+Route::post('/glasbeneskupine', [GlasbenaskupinaController::class, 'store'])->middleware('auth');
+
+// Show Edit Form
+Route::get('/glasbeneskupine/{glasbenaskupina}/edit', [GlasbenaskupinaController::class, 'edit'])->middleware('auth');
+
+// Update Listing
+Route::put('/glasbeneskupine/{glasbenaskupina}', [GlasbenaskupinaController::class, 'update'])->middleware('auth');
+
+// Delete Listing
+Route::delete('/glasbeneskupine/{glasbenaskupina}', [GlasbenaskupinaController::class, 'destroy'])->middleware('auth');
+
+// Manage Listings
+Route::get('/glasbeneskupine/manage', [GlasbenaskupinaController::class, 'manage'])->middleware('auth');
+
+// Single Listing
+Route::get('/glasbeneskupine/{glasbenaskupina}', [GlasbenaskupinaController::class, 'show']);
 
 
 
