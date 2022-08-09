@@ -21,7 +21,8 @@ Route::get('/', function () {
     return view('index');
 });
 
-
+// Manage Listings
+Route::get('/glasbeneskupine/manage', [GlasbenaskupinaController::class, 'manage'])->middleware('auth');
 //---GLASBENE SKUPINE
 
 // All Listings

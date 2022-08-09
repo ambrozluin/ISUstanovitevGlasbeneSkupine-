@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Glasbenaskupina;
+use App\Models\User;
 
 class GlasbenaskupinaController extends Controller
 {
@@ -85,6 +86,11 @@ class GlasbenaskupinaController extends Controller
         
         $glasbenaskupina->delete();
         return redirect('/')->with('message', 'Listing deleted successfully');
+    }
+
+    // Manage Listings
+    public function manage() {
+        return view('glasbeneskupine.manage', ['glasbeneskupine' => auth()->user()->glasbeneskupine()->get()]);
     }
     
 }

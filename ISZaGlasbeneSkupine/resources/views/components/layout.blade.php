@@ -38,7 +38,7 @@
       
 
       <li>
-        <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i> Urejaj Skupine</a>
+        <a href="/glasbeneskupine/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i> Urejaj Skupine</a>
       </li>
       <li>
         <form class="inline" method="POST" action="/logout">
