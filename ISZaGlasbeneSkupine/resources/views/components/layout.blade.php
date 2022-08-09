@@ -16,7 +16,7 @@
         theme: {
           extend: {
             colors: {
-              laravel: '#66B2FF',
+              laravel: '#66B2FA',
             },
           },
         },
@@ -32,7 +32,7 @@
       @auth
       <li>
         <span class="font-bold uppercase">
-          Dobrodošel {{auth()->user()->name}}
+          Dobrodošli {{auth()->user()->name}}
         </span>
       </li>
       
