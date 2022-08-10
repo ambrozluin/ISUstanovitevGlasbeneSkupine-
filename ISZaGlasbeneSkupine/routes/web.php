@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GlasbenaskupinaController;
+use App\Http\Controllers\InviteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ListingController;
@@ -94,3 +95,15 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 
 // Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+
+
+
+
+//Invite
+Route::get('/invite', [InviteController::class, 'invite']);
+
+Route::post('/invite', [InviteController::class, 'process']);
+
+// {token} is a required parameter that will be exposed to us in the controller method
+Route::get('/accept/{token}', [InviteController::class, 'accept']);
