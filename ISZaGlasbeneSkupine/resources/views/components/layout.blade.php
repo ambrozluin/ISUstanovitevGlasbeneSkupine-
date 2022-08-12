@@ -9,6 +9,7 @@
   <link href="{{ asset('css/responsiveFixedAnimatedNavBar.css') }}" rel="stylesheet">
   <script type="text/javascript" src="{{ asset('js/responsiveFixedAnimatedNavBar.js') }}"></script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="icon" href="images/favicon.ico" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/
   integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
@@ -41,7 +42,7 @@
       @auth
       <li>
         <span class="font-bold uppercase">
-          Dobrodošli {{auth()->user()->name}}
+          Dobrodošli <span class="text-warning"> {{auth()->user()->name}}</span>
         </span>
       </li>
       
@@ -50,7 +51,10 @@
         <a href="/glasbeneskupine/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i> Urejaj Skupine</a>
       </li>
       <li>
-        <a href="/users/listall" class="hover:text-laravel"><i class="fa-solid fa-envelope"></i> Povabila</a>
+        <a href="/users/listall" class="hover:text-laravel"><i class="fa-solid fa-users"></i> Uporabniki</a>
+      </li>
+      <li>
+        <a href="/invites" class="hover:text-laravel"><i class="fa-solid fa-envelope"></i> Povabila</a>
       </li>
       <li>
         

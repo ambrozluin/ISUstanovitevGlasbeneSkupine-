@@ -25,8 +25,8 @@
                         <td scope="row">{{$user->name}} </td>
                         <td scope="row">{{$user->email}} </td>
                         <td scope="row">
-                            <button class="h-8 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600" onclick="location.href='/invite/{{$user->id}}'" type="button">
-                                Povabi</button>
+                            <button class="h-8 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600"
+                             onclick="location.href='/invite/{{$user->id}}'" type="button">Povabi</button>
                         </td>
                     </tr>
                     @endforeach

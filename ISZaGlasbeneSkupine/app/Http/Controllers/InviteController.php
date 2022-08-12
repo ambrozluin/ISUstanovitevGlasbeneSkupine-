@@ -11,10 +11,11 @@ use Illuminate\Http\Request;
 
 class InviteController extends Controller
 {
-    public function invite()
+    public function invites(Invite $invite)
     {
-        // show the user a form with an email field to invite a new user
-        return view('invite');
+        return view('invites.show',[
+            'invites' => Invite::all()
+        ]);
     }
 
     //Show invite form with usermail
@@ -27,8 +28,27 @@ class InviteController extends Controller
     
 
     
-    public function process(Request $request)
+    public function store(Request $request)
     {
+        do {
+            //generate a random string using Laravel's str_random helper
+            $token = Str::random(10);
+
+        } //check if the token already exists and if it does, try again
+
+        while (Invite::where('token', $token)->first());
+        //create a new invite record
+        $invite = Invite::create([
+            'email' => $request->get('email'),
+            'instrument' => $request->get('instrument'),
+            'namen' => $request->get('namen'),
+            'token' => $token
+        ]);
+
+        return redirect('/')->with('message', 'Povabilo uspešno poslano!');
+
+
+        /*
         // process the form submission and send the invite by email
         do {
             //generate a random string using Laravel's str_random helper
@@ -42,13 +62,13 @@ class InviteController extends Controller
             'email' => $request->get('email'),
             'token' => $token
         ]);
-
+        */
         // send the email
         //Mail::to($request->get('email'))->send(new InviteCreated($invite));
 
 
         // redirect back where we came from
-        return redirect('/')->with('message', 'Invite send');
+        //return redirect('/')->with('message', 'Invite send');
     }
 
     public function accept($token)

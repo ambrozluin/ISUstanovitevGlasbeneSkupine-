@@ -39,10 +39,10 @@
 
       <div class="mb-6">
         <label for="tags" class="inline-block text-lg mb-2">
-          Tags (Comma Separated)
+          Oznake (loči z vejico)
         </label>
         <input type="text" class="border border-gray-200 rounded p-2 w-full" name="tags"
-          placeholder="Example: Laravel, Backend, Postgres, etc" value="{{old('tags')}}" />
+          placeholder="Primer: Rock, pop, blues ipd." value="{{old('tags')}}" />
 
         @error('tags')
         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -52,10 +52,10 @@
       
       <div class="mb-6">
         <label for="opis" class="inline-block text-lg mb-2">
-          Job Description
+          Opis glasbene skupine:
         </label>
         <textarea class="border border-gray-200 rounded p-2 w-full" name="opis" rows="10"
-          placeholder="Zgodovina, nastopi, misli">{{old('opis')}}</textarea>
+          placeholder="Zgodovina nastanka, predhodnji nastopi, ideje in misli..">{{old('opis')}}</textarea>
 
         @error('opis')
         <p class="text-red-500 text-xs mt-1">{{$message}}</p>

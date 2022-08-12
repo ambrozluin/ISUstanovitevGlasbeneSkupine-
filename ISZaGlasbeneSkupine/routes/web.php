@@ -52,28 +52,28 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 
 
-// All Listings
+// All Music groups
 Route::get('/', [GlasbenaskupinaController::class, 'index']);
 
 // Show Create Form
 Route::get('/glasbeneskupine/create', [GlasbenaskupinaController::class, 'create'])->middleware('auth');
 
-// Store Listing Data
+// Store Music Group Data
 Route::post('/glasbeneskupine', [GlasbenaskupinaController::class, 'store'])->middleware('auth');
 
 // Show Edit Form
 Route::get('/glasbeneskupine/{glasbenaskupina}/edit', [GlasbenaskupinaController::class, 'edit'])->middleware('auth');
 
-// Update Listing
+// Update Music Group
 Route::put('/glasbeneskupine/{glasbenaskupina}', [GlasbenaskupinaController::class, 'update'])->middleware('auth');
 
-// Delete Listing
+// Delete Music Group
 Route::delete('/glasbeneskupine/{glasbenaskupina}', [GlasbenaskupinaController::class, 'destroy'])->middleware('auth');
 
-// Manage Listings
+// Manage Music Group
 Route::get('/glasbeneskupine/manage', [GlasbenaskupinaController::class, 'manage'])->middleware('auth');
 
-// Single Listing
+// Single Music Group
 Route::get('/glasbeneskupine/{glasbenaskupina}', [GlasbenaskupinaController::class, 'show']);
 
 
@@ -96,16 +96,20 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 // Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
-// Log User Out
+// List all users
 Route::get('/users/listall', [UserController::class, 'listall']);
 
 
-//Invite
-Route::get('/invite', [InviteController::class, 'invite']);
+//POVABILA
 
-Route::get('/invite/{user}', [InviteController::class, 'inviteuser']);
+//Show invites
+Route::get('/invites', [InviteController::class, 'invites'])->middleware('auth');
 
-Route::post('/invite/process', [InviteController::class, 'process']);
+// Invite user id
+Route::get('/invite/{user}', [InviteController::class, 'inviteuser'])->middleware('auth');
+
+// Store invite
+Route::post('/invite/store', [InviteController::class, 'store'])->middleware('auth');
 
 // {token} is a required parameter that will be exposed to us in the controller method
 Route::get('/accept/{token}', [InviteController::class, 'accept']);

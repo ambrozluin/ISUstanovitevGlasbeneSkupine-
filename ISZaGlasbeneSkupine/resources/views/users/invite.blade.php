@@ -5,7 +5,7 @@
         <p class="mb-4">Pošlji povabilo drugemu uporabniku.</p>
       </header>
   
-      <form method="POST" action="/invite/process">
+      <form method="POST" action="/invite/store">
         @csrf
   
         <div class="mb-6">
@@ -13,6 +13,25 @@
           <input type="email" class="border border-gray-200 rounded p-2 w-full" name="email" value="{{$users->email}}" />
   
           @error('email')
+          <p class="text-red-500 text-xs mt-1"></p>
+          @enderror
+        </div>
+
+        <div class="mb-6">
+          <label for="instrument" class="inline-block text-lg mb-2">Glasbeni instrument</label>
+          <input type="instrument" class="border border-gray-200 rounded p-2 w-full" name="instrument" value="Kitara, klavir, bobni.." />
+  
+          @error('instrument')
+          <p class="text-red-500 text-xs mt-1"></p>
+          @enderror
+        </div>
+
+        <div class="mb-6">
+          <label for="namen" class="inline-block text-lg mb-2">Namen</label>
+          <textarea class="border border-gray-200 rounded p-2 w-full" 
+            name="namen" rows="3" placeholder="Npr. potrebujemo novega pianista"></textarea>
+  
+          @error('namen')
           <p class="text-red-500 text-xs mt-1"></p>
           @enderror
         </div>
