@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Invite;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class InviteController extends Controller
@@ -23,6 +24,26 @@ class InviteController extends Controller
         return view('users.invite', [
             'users' => $user
         ]);
+    }
+
+   
+
+    public function chataction(Request $request)
+    {   
+        $user = Auth::user();
+
+        if($request->id == $user->id){
+            return response("Can't message yourself!");
+        }
+
+        /*
+        $m = $user->invites()->create([             
+            'chat_message' => $request->input('message'),
+            'from_user_id' => $user->id,
+            'to_user_id' => $request->input('id'),
+            ]);     */
+
+        return ['status' => 'Message Sent!'];
     }
 
     

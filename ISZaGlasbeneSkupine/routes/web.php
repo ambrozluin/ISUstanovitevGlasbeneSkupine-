@@ -22,36 +22,26 @@ Route::get('/', function () {
     return view('index');
 });
 
-// Manage Listings
-Route::get('/glasbeneskupine/manage', [GlasbenaskupinaController::class, 'manage'])->middleware('auth');
-//---GLASBENE SKUPINE
-
+/*
 // All Listings
 Route::get('/', [ListingController::class, 'index']);
-
 // Show Create Form
 Route::get('/listings/create', [ListingController::class, 'create'])->middleware('auth');
-
 // Store Listing Data
 Route::post('/listings', [ListingController::class, 'store'])->middleware('auth');
-
 // Show Edit Form
 Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->middleware('auth');
-
 // Update Listing
 Route::put('/listings/{listing}', [ListingController::class, 'update'])->middleware('auth');
-
 // Delete Listing
 Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
-
 // Manage Listings
 Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
-
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
+*/
 
-
-
+//---GLASBENE SKUPINE
 // All Music groups
 Route::get('/', [GlasbenaskupinaController::class, 'index']);
 
@@ -97,7 +87,7 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 // List all users
-Route::get('/users/listall', [UserController::class, 'listall']);
+Route::get('/users/listall', [UserController::class, 'listall'])->middleware('auth');
 
 
 //POVABILA

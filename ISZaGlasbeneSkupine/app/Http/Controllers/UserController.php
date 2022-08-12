@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     // Show Register/Create Form
     public function listall() {
-        $users = User::all();
+        $users = User::all()->except(Auth::id());
 
         return view('users.listall',compact('users'));
     }
