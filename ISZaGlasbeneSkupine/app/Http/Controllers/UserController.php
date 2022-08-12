@@ -9,6 +9,13 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
     // Show Register/Create Form
+    public function listall() {
+        $users = User::all();
+
+        return view('users.listall',compact('users'));
+    }
+
+    // Show Register/Create Form
     public function create() {
         return view('users.registracija');
     }

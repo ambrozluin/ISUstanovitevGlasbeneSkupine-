@@ -5,10 +5,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Invite;
-use App\Mail\InviteCreated;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
+
 
 class InviteController extends Controller
 {
@@ -17,6 +16,16 @@ class InviteController extends Controller
         // show the user a form with an email field to invite a new user
         return view('invite');
     }
+
+    //Show invite form with usermail
+    public function inviteuser(User $user) {
+        return view('users.invite', [
+            'users' => $user
+        ]);
+    }
+
+    
+
     
     public function process(Request $request)
     {

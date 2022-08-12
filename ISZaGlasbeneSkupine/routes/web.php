@@ -96,12 +96,14 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 // Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
-
-
+// Log User Out
+Route::get('/users/listall', [UserController::class, 'listall']);
 
 
 //Invite
 Route::get('/invite', [InviteController::class, 'invite']);
+
+Route::get('/invite/{user}', [InviteController::class, 'inviteuser']);
 
 Route::post('/invite/process', [InviteController::class, 'process']);
 

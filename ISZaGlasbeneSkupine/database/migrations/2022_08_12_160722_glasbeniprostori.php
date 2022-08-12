@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('invites', function (Blueprint $table) {
+        Schema::create('glasbeniprostori', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email');
-            $table->string('instrument');
-            $table->string('namen');
-            $table->string('token', 16)->unique();
+            $table->string('kraj');
+            $table->integer('cena');
+            $table->string('vrsta');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('invites');
+        Schema::dropIfExists('glasbeniprostori');
     }
 };
