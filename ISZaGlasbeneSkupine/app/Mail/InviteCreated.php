@@ -21,14 +21,13 @@ class InviteCreated extends Mailable
     {
         $this->invite = $invite;
     }
-
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
+    
+    
     public function build()
     {
-        return $this->view('view.name');
+        $data = array(
+             "invite" => $this->invite
+        );
+        return $this->from('hello@gexample.com')->view('emails.invite', $data);   
     }
 }

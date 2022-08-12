@@ -50,6 +50,10 @@
         <a href="/glasbeneskupine/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i> Urejaj Skupine</a>
       </li>
       <li>
+        <a href="/invite" class="hover:text-laravel"><i class="fa-solid fa-envelope"></i> Povabila</a>
+      </li>
+      <li>
+        
         <form class="inline" method="POST" action="/logout">
           @csrf
           <button type="submit">

@@ -21,7 +21,6 @@ class InviteController extends Controller
     public function process(Request $request)
     {
         // process the form submission and send the invite by email
-
         do {
             //generate a random string using Laravel's str_random helper
             $token = Str::random(10);
@@ -36,7 +35,8 @@ class InviteController extends Controller
         ]);
 
         // send the email
-        Mail::to($request->get('email'))->send(new InviteCreated($invite));
+        //Mail::to($request->get('email'))->send(new InviteCreated($invite));
+
 
         // redirect back where we came from
         return redirect('/')->with('message', 'Invite send');

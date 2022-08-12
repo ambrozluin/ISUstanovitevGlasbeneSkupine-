@@ -103,7 +103,7 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 //Invite
 Route::get('/invite', [InviteController::class, 'invite']);
 
-Route::post('/invite', [InviteController::class, 'process']);
+Route::post('/invite/process', [InviteController::class, 'process']);
 
 // {token} is a required parameter that will be exposed to us in the controller method
 Route::get('/accept/{token}', [InviteController::class, 'accept']);

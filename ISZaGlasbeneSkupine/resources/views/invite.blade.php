@@ -5,7 +5,7 @@
         <p class="mb-4">Pošlji povabilo drugemu uporabniku.</p>
       </header>
   
-      <form method="POST" action="/invite">
+      <form method="POST" action="/invite/process">
         @csrf
   
         <div class="mb-6">
