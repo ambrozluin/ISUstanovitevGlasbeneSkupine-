@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Glasbenaskupina;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class GlasbenaskupinaController extends Controller
 {
@@ -17,11 +18,12 @@ class GlasbenaskupinaController extends Controller
 
     //Show single listing
     public function show(Glasbenaskupina $glasbenaskupina) {
-
+        $authUser = Auth::id();
         $users = User::all();
         return view('glasbeneskupine.show', [
             'glasbeneskupine' => $glasbenaskupina,
-            'users' => $users
+            'users' => $users,
+            'authUser' => $authUser
         ]);
     }
 

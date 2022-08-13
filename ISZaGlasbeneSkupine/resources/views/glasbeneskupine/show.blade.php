@@ -29,6 +29,10 @@
       </div>
     </x-card>
 
+
+    @if ($authUser==$glasbeneskupine->user_id) <!--preveri ali sem ustvaril skupino !-->
+        
+   
     <x-card class="p-10 mx-auto mt-24">
       <header>
           <h3 class="text-3xl text-center font-bold my-6 uppercase">
@@ -43,26 +47,31 @@
               <th scope="col">Sodelovanje</th>
               </thead>
               <tbody>
-                  @foreach($users as $user)
-                    @if ( !$user->isMyGroup($glasbeneskupine) )
-                      <tr>
-                        <td scope="row">{{$user->id}} </td>
-                        <td scope="row">{{$user->name}} </td>
-                        <td scope="row">{{$user->email}} </td>
-                        <td scope="row">
-                            {{-- <button class="h-8 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600"
-                            onclick="location.href='/invite/{{$user}}/{{$glasbeneskupine}}'" type="button">Povabi</button> --}}
-                            <a href=" {{ route('inviteToGroup', [$user, $glasbeneskupine]) }}"> Povabi</a>
-                            {{-- <button class="h-8 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600"
-                            onclick="route('inviteToGroup', [])" type="button">Povabi</button> --}}
-                        </td>
-                      </tr>
-                    @endif
-                  @endforeach
+                  
+                    @foreach($users as $user)
+                      @if ( !$user->isMyGroup($glasbeneskupine) )
+                        <tr>
+                          <td scope="row">{{$user->id}} </td>
+                          <td scope="row">{{$user->name}} </td>
+                          <td scope="row">{{$user->email}} </td>
+                          <td scope="row">
+                              {{-- <button class="h-8 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600"
+                              onclick="location.href='/invite/{{$user}}/{{$glasbeneskupine}}'" type="button">Povabi</button> --}}
+                              <a href=" {{ route('inviteToGroup', [$user, $glasbeneskupine]) }}" class="btn btn-warning"> Povabi</a>
+                              {{-- <button class="h-8 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600"
+                              onclick="route('inviteToGroup', [])" type="button">Povabi</button> --}}
+                          </td>
+                        </tr>
+                      @endif
+                    @endforeach 
+                  
+
               </tbody>
       </table>
     </x-card>
+    @endif
 
+    
     {{-- <x-card class="mt-4 p-2 flex space-x-6">
       <a href="/listings/{{$listing->id}}/edit">
         <i class="fa-solid fa-pencil"></i> Edit

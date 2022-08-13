@@ -34,4 +34,5 @@ class Glasbenaskupina extends Model
     {
         return $this->hasMany(Inivite::class);
     }
+
 }

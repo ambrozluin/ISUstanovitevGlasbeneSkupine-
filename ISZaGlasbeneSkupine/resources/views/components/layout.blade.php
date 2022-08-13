@@ -50,9 +50,9 @@
       <li>
         <a href="/glasbeneskupine/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i> Urejaj Skupine</a>
       </li>
-      <li>
+      {{-- <li>
         <a href="/users/listall" class="hover:text-laravel"><i class="fa-solid fa-users"></i> Uporabniki</a>
-      </li>
+      </li> --}}
       <li>
         <a href="/invites" class="hover:text-laravel"><i class="fa-solid fa-envelope"></i> Povabila</a>
       </li>

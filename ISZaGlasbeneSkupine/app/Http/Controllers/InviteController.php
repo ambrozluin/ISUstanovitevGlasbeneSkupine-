@@ -73,6 +73,7 @@ class InviteController extends Controller
             'receiver_id' => $request->receiver_id,
             'group_id' => $request->group_id,
             'email' => $request->get('email'),
+            'sender_email' => Auth::user()->email,
             'instrument' => $request->get('instrument'),
             'namen' => $request->get('namen'),
             'token' => $token

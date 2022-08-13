@@ -22,6 +22,7 @@ return new class extends Migration
             $table->foreignId('group_id')->references('id')
             ->on('glasbeneskupine')->constrained()->onDelete('cascade');
             $table->string('email');
+            $table->string('sender_email');
             $table->string('instrument');
             $table->string('namen');
             $table->string('token', 16)->unique();

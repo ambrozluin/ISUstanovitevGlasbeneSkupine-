@@ -18,7 +18,8 @@ class Invite extends Model
         'sender_id',
         'receiver_id',
         'group_id',
-        'email', 
+        'email',
+        'sender_email',
         'instrument', 
         'namen', 
         'token'
@@ -43,5 +44,6 @@ class Invite extends Model
     public function group() {
         return $this->belongsTo(Glasbenaskupina::class, 'group_id');
     }
+
 
 }

@@ -18,7 +18,7 @@
       </div>
 
       <div hidden class="mb-6">
-        <label for="receiver_id" class="inline-block text-lg mb-2">E-posta</label>
+        <label for="receiver_id" class="inline-block text-lg mb-2">receiver_id</label>
         <input type="number" class="border border-gray-200 rounded p-2 w-full" name="receiver_id" value="{{$users->id}}" />
 
         @error('email')
@@ -27,7 +27,7 @@
       </div>
 
       <div hidden class="mb-6">
-        <label for="group_id" class="inline-block text-lg mb-2">E-posta</label>
+        <label for="group_id" class="inline-block text-lg mb-2">group_id</label>
         <input type="number" class="border border-gray-200 rounded p-2 w-full" name="group_id" value="{{$group->id}}" />
 
         @error('email')
