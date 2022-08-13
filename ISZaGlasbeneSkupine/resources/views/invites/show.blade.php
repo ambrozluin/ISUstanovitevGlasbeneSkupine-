@@ -1,7 +1,7 @@
 <x-layout>
     <div>
-        <h1 class="text-3xl text-center font-bold my-6 uppercase">
-          Vsa povabila
+        <h1 class="text-3xl m-10 text-left font-bold my-6 uppercase">
+            <i class="fa-solid fa-envelope"></i> Vsa povabila
         </h1>
     </div>
   
