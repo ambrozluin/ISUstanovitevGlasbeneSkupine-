@@ -3,6 +3,7 @@
     <header>
       <h1 class="text-3xl text-center font-bold my-6 uppercase">
         Urejaj glasbene skupine
+        
       </h1>
     </header>
 
