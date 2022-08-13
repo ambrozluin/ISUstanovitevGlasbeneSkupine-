@@ -50,6 +50,16 @@ class User extends Authenticatable
     }
 
     public function invites(){
-        return $this->hasMany(Invite::class, 'user_id');
+        return $this->hasMany(Invite::class);
+    }
+
+    public function isMyGroup(Glasbenaskupina $group)
+    {
+        if ( $group->user_id == $this->id) {
+            return true;
+        } else {
+            return false;
+        }
+        
     }
 }

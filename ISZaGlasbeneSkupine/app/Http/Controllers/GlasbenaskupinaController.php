@@ -17,8 +17,11 @@ class GlasbenaskupinaController extends Controller
 
     //Show single listing
     public function show(Glasbenaskupina $glasbenaskupina) {
+
+        $users = User::all();
         return view('glasbeneskupine.show', [
-            'glasbeneskupine' => $glasbenaskupina
+            'glasbeneskupine' => $glasbenaskupina,
+            'users' => $users
         ]);
     }
 

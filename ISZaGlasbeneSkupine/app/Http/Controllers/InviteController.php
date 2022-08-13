@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Glasbenaskupina;
 use App\Models\User;
 use App\Models\Invite;
 use Illuminate\Support\Str;
@@ -23,6 +23,15 @@ class InviteController extends Controller
     public function inviteuser(User $user) {
         return view('users.invite', [
             'users' => $user
+        ]);
+    }
+
+    //Show invite form with usermail
+    public function inviteToGroup(User $user, Glasbenaskupina $group) {
+
+        return view('users.invite', [
+            'users' => $user,
+            'group' => $group
         ]);
     }
 
@@ -60,6 +69,9 @@ class InviteController extends Controller
         while (Invite::where('token', $token)->first());
         //create a new invite record
         $invite = Invite::create([
+            'sender_id' => Auth::user()->id,
+            'receiver_id' => $request->receiver_id,
+            'group_id' => $request->group_id,
             'email' => $request->get('email'),
             'instrument' => $request->get('instrument'),
             'namen' => $request->get('namen'),

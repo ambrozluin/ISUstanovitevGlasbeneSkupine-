@@ -15,7 +15,7 @@ class UserController extends Controller
 
         return view('users.listall',compact('users'));
     }
-
+    
     // Show Register/Create Form
     public function create() {
         return view('users.registracija');

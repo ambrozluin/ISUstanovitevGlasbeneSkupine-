@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('invites', function (Blueprint $table) {
             $table->increments('id');
+            $table->foreignId('sender_id')->references('id')
+            ->on('users')->constrained()->onDelete('cascade');
+            $table->foreignId('receiver_id')->references('id')
+            ->on('users')->constrained()->onDelete('cascade');
+            $table->foreignId('group_id')->references('id')
+            ->on('glasbeneskupine')->constrained()->onDelete('cascade');
             $table->string('email');
             $table->string('instrument');
             $table->string('namen');

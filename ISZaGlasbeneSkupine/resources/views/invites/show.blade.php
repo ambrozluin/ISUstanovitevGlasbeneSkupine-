@@ -20,14 +20,18 @@
                 </thead>
                 <tbody>
                     @unless($invites->isEmpty())
-                    @foreach($invites as $invite)
-                    <tr>
-                        <td scope="row">{{$invite->id}} </td>
-                        <td scope="row">{{$invite->email}} </td>
-                        <td scope="row">{{$invite->namen}} </td>
-                        <td scope="row">{{$invite->instrument}} </td>
-                    </tr>
-                    @endforeach
+                        @auth
+                            @foreach($invites as $invite)
+                                @if ( !Auth::user()->isMyGroup($invite->group) )
+                                    <tr>
+                                        <td scope="row">{{$invite->id}} </td>
+                                        <td scope="row">{{$invite->email}} </td>
+                                        <td scope="row">{{$invite->namen}} </td>
+                                        <td scope="row">{{$invite->instrument}} </td>
+                                    </tr>
+                                @endif
+                            @endforeach
+                        @endauth
                     @else
                     <tr class="border-gray-300">
                     <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">

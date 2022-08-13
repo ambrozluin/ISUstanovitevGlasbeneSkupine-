@@ -16,6 +16,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Ime</th>
                 <th scope="col">E-pošta</th>
+                <th scope="col">Skupina</th>
                 <th scope="col">Sodelovanje</th>
                 </thead>
                 <tbody>
@@ -26,7 +27,7 @@
                         <td scope="row">{{$user->email}} </td>
                         <td scope="row">
                             <button class="h-8 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600"
-                             onclick="location.href='/invite/{{$user->id}}'" type="button">Povabi</button>
+                             onclick="location.href='/invite/{{$user}}/{{$skupina}}'" type="button">Povabi</button>
                         </td>
                     </tr>
                     @endforeach
