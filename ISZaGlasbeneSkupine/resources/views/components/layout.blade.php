@@ -66,7 +66,7 @@
         <a href="/invites" class="hover:text-laravel"><i class="fa-solid fa-envelope"></i> Povabila</a>
       </li>
       <li>
-        <a href="/places" class="hover:text-laravel"><i class="fa-solid fa-home"></i>Prostori</a>
+        <a href="/places" class="hover:text-laravel"><i class="fa-solid fa-home"></i> Prostori</a>
       </li>
       <li>
         
