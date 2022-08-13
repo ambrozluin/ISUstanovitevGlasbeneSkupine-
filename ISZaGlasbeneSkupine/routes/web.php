@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\GlasbenaskupinaController;
-use App\Http\Controllers\InviteController;
+use App\Models\Glasbenaskupina;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PlaceController;
+use App\Http\Controllers\InviteController;
 use App\Http\Controllers\ListingController;
-use App\Models\Glasbenaskupina;
+use App\Http\Controllers\GlasbenaskupinaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,3 +112,13 @@ Route::post('/invite/store', [InviteController::class, 'store'])->middleware('au
 
 // {token} is a required parameter that will be exposed to us in the controller method
 Route::get('/accept/{token}', [InviteController::class, 'accept']);
+
+//GLASBENI PROSTORI
+// Music places
+Route::get('/places', [PlaceController::class, 'index'])->middleware('auth');
+
+// Music places
+Route::get('/places/create', [PlaceController::class, 'create'])->middleware('auth');
+
+// Store Place Data
+Route::post('/places/store', [PlaceController::class, 'store'])->middleware('auth');

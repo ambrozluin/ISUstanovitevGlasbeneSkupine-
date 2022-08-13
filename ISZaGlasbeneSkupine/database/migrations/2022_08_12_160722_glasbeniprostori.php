@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('glasbeniprostori', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('kraj');
-            $table->integer('cena');
-            $table->string('vrsta');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('lokacija');
+            $table->string('cena');
+            $table->string('tags');
+            $table->string('telefon');
             $table->timestamps();
         });
     }
