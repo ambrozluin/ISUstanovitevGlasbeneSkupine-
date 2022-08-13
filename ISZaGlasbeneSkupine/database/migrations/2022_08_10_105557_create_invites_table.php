@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('instrument');
             $table->string('namen');
             $table->string('token', 16)->unique();
+            $table->string('status');
             $table->timestamps();
         });
     }

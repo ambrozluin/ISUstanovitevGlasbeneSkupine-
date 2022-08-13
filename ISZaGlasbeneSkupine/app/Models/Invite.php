@@ -22,7 +22,8 @@ class Invite extends Model
         'sender_email',
         'instrument', 
         'namen', 
-        'token'
+        'token',
+        'status'
     ];
 
     // Relationship To User

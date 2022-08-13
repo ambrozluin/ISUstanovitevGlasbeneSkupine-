@@ -101,6 +101,9 @@ Route::get('/invite/{user}', [InviteController::class, 'inviteuser'])->middlewar
 // Invite user to group
 Route::get('/invite/{user}/{group}', [InviteController::class, 'inviteToGroup'])->middleware('auth')->name('inviteToGroup');
 
+// acceptInvite
+Route::get('/invites/{invite}', [InviteController::class, 'accept'])->middleware('auth')->name('accept');
+
 // Store invite
 Route::post('/invite/store', [InviteController::class, 'store'])->middleware('auth');
 
