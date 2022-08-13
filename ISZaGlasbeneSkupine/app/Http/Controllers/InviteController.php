@@ -115,5 +115,14 @@ class InviteController extends Controller
 
     }
 
+    public function dump(Invite $invite)
+    {
+        $invites = Invite::all();
+        $invite = $invites->find($invite->id);
+        $invite -> delete();
+        
+        return redirect('/invites')->with('message', 'Invite deleted');
+    }
+
 
 }

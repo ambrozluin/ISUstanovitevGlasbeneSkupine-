@@ -34,6 +34,7 @@
                                             <td scope="row">{{$invite->instrument}} </td>
                                             <td scope="row">
                                                 <a href="invites/{{$invite->id}}" class="btn btn-warning"> Sprejmi</a>
+                                                <a href="invites/dump/{{$invite->id}}" class="btn btn-danger"> Zavrni</a>
                                             </td>
                                         </tr>
                                     @endif
