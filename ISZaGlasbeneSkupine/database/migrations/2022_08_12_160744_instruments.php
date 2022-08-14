@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('glasbeniinstrument', function (Blueprint $table) {
+        Schema::create('instruments', function (Blueprint $table) {
             $table->increments('id');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('ime');
             $table->integer('cena');
-            $table->string('nacinizvajanja');
+            $table->string('vrsta');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('glasbeniinstrumenti');
+        Schema::dropIfExists('instruments');
     }
 };
