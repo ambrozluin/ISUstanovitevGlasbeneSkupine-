@@ -26,7 +26,7 @@ class InstrumentController extends Controller
             'user_id' => auth()->id()
         ]);
 
-        return redirect('/')->with('message', 'Music group created successfully!');
+        return redirect('/instruments')->with('message', 'Instrument added successfully');
     }
 
     public function list() {
@@ -41,6 +41,6 @@ class InstrumentController extends Controller
         $instrument = $instruments->find($instrument->id);
         $instrument -> delete();
         
-        return redirect('/instruments/list')->with('message', 'Instrument deleted');
+        return redirect('/instruments/list')->with('message', 'Instrument deleted successfully');
     }
 }

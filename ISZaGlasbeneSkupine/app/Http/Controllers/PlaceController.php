@@ -17,7 +17,7 @@ class PlaceController extends Controller
         return view('places.create');
     }
 
-    // Store Music group Data
+    // Store Place data
     public function store(Request $request) {
 
         $formFields = $request->validate([

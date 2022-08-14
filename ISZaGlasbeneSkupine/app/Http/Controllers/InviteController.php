@@ -56,7 +56,7 @@ class InviteController extends Controller
             'status' => "prejeto"
         ]);
 
-        return redirect('/')->with('message', 'Povabilo uspešno poslano!');
+        return redirect('/')->with('message', 'Invite has been send!');
 
 
         /*
@@ -110,7 +110,7 @@ class InviteController extends Controller
         $invite = $invites->find($invite->id);
         $invite -> delete();
         
-        return redirect('/invites')->with('message', 'Invite deleted');
+        return redirect('/invites')->with('message', 'Invite accepted');
         
 
     }
