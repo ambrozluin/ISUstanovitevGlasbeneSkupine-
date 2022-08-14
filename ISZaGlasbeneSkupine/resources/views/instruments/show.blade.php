@@ -22,6 +22,7 @@
                 </thead>
                 <tbody>
                     @foreach($instruments as $instrument)
+                        @if($instrument->user_id==1)
                         <tr>
                             <form>
                             <td scope="row">{{$instrument->id}} </td>
@@ -33,6 +34,7 @@
                             </td>
                             </form>
                         </tr>
+                        @endif
                     @endforeach
                 </tbody>
         </table>
