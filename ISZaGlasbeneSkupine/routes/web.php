@@ -1,12 +1,14 @@
 <?php
 
-use App\Models\Glasbenaskupina;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\InviteController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\GlasbenaskupinaController;
+use App\Http\Controllers\InstrumentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -122,3 +124,9 @@ Route::get('/places/create', [PlaceController::class, 'create'])->middleware('au
 
 // Store Place Data
 Route::post('/places/store', [PlaceController::class, 'store'])->middleware('auth');
+
+
+
+//GLASBENI INSTRUMENTI
+// Show instruments
+Route::get('/instruments', [InstrumentController::class, 'index'])->middleware('auth');

@@ -53,11 +53,15 @@
       </li>
       
       <li>
-        <a href="/" class="hover:text-laravel"><i class="fa-solid fa-group"></i> Skupine</a>
+        <a href="/" class="hover:text-laravel"><i class="fa-solid fa-group"></i> Listaj Skupine</a>
       </li>
 
       <li>
         <a href="/glasbeneskupine/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i> Urejaj Skupine</a>
+      </li>
+
+      <li>
+        <a href="/instruments" class="hover:text-laravel"><i class="fa-solid fa-microphone"></i> Glasbila</a>
       </li>
       {{-- <li>
         <a href="/users/listall" class="hover:text-laravel"><i class="fa-solid fa-users"></i> Uporabniki</a>
