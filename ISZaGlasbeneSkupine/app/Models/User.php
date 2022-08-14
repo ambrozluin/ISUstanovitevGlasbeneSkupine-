@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Invite;
+use App\Models\Instrument;
 use App\Models\Glasbenaskupina;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -61,5 +62,9 @@ class User extends Authenticatable
             return false;
         }
         
+    }
+
+    public function instruments(){
+        return $this->hasMany(Instrument::class, 'user_id');
     }
 }

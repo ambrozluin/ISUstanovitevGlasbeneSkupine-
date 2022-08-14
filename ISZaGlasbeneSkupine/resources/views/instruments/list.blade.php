@@ -2,8 +2,8 @@
     <x-herog></x-herog>
 
     <x-card class="text-left">
-        <a class="btn btn-info btn-lg active" href="/instruments">Vsi Instrumenti</a>
-        <a class="btn btn-info btn-lg" href="/instruments/list">Moji Instrumenti</a>
+        <a class="btn btn-info btn-lg" href="/instruments">Vsi Instrumenti</a>
+        <a class="btn btn-info btn-lg active" href="/instruments/list">Moji Instrumenti</a>
     </x-card>
 
     <x-card class="p-10 mx-auto mt-24">
@@ -29,7 +29,7 @@
                             <td scope="row">{{$instrument->cena}} € </td>
                             <td scope="row">{{$instrument->vrsta}} </td>
                             <td scope="row">
-                                <a href="instruments/{{$instrument->id}}" class="btn btn-primary"> Dodaj</a>
+                                <a href="/instruments/remove/{{$instrument->id}}" class="btn btn-danger"> Odstani</a>
                             </td>
                             </form>
                         </tr>

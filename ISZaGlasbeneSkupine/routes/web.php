@@ -128,5 +128,15 @@ Route::post('/places/store', [PlaceController::class, 'store'])->middleware('aut
 
 
 //GLASBENI INSTRUMENTI
+// List my instruments
+Route::get('/instruments/list', [InstrumentController::class, 'list'])->middleware('auth');
+
 // Show instruments
 Route::get('/instruments', [InstrumentController::class, 'index'])->middleware('auth');
+
+// Add instrument
+Route::get('/instruments/{instrument}', [InstrumentController::class, 'store'])->middleware('auth')->name('store');
+
+// Remove instrument
+Route::get('/instruments/remove/{instrument}', [InstrumentController::class, 'remove'])->middleware('auth')->name('remove');
+
